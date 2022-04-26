@@ -7,6 +7,11 @@ import { JobslistComponent } from './jobslist/jobslist.component';
 import { UploadcvComponent } from './uploadcv/uploadcv.component';
 import { NewjobComponent } from './newjob/newjob.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryDataService } from './in-memory-data.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { JobdetailComponent } from './jobdetail/jobdetail.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,16 @@ import { NavbarComponent } from './navbar/navbar.component';
     JobslistComponent,
     UploadcvComponent,
     NewjobComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent,
+    JobdetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

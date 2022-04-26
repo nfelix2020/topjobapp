@@ -4,3 +4,19 @@
  .container{
     margin-top: 100px;
 }
+
+.ad-time{
+    color: red;
+    
+}
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.highlight{
+    
+    border: 1px solid blue;
+
+  }

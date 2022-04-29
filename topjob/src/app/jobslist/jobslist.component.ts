@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Job } from '../Job';
 import { JobserviceService } from '../jobservice.service';
 
@@ -11,14 +11,22 @@ import { JobserviceService } from '../jobservice.service';
 export class JobslistComponent implements OnInit {
 
   jobList: Job[]=[];
+  
+  selectedJob: Job;
+  jobId: number;
 
   constructor(
     private jobService: JobserviceService,
-    private router:Router
+    private router:Router, 
+    private route: ActivatedRoute
     ) { }
   
 
   ngOnInit(): void {
+
+     //Recuperer l'Id de chaque job
+    //  this.jobId= parseInt(this.route.snapshot.params['id']); 
+    
     this.getAllJobs();
   }
 
@@ -27,6 +35,12 @@ export class JobslistComponent implements OnInit {
       this.jobList=data;
     })
   }
+
+
+  
+     
+   
+  
 
  // HIGHLIGHT A SELECTED JOB 
 
@@ -44,4 +58,22 @@ export class JobslistComponent implements OnInit {
   cardClick(){
     // this.router.navigateByUrl('/newjob');
   }
+
+  // showJobDetails(){
+  //   this.jobService.getJob(this.jobId, this.j).subscribe(data=>{
+  //     console.log(data);
+  //     this.job=data;
+  //   })
+  // }
+  
+  onSelectJob(job: Job): void{
+
+    this.selectedJob=job;
+    // this.router.navigateByUrl("/job/" + job.id +"/description");
+    
+  }
+
+
+
+
 }

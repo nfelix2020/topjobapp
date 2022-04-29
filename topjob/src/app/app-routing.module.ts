@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobdetailComponent } from './jobdetail/jobdetail.component';
 import { JobslistComponent } from './jobslist/jobslist.component';
@@ -12,7 +12,13 @@ const routes: Routes = [
   {path:'joblist', component: JobslistComponent},
   {path:'uploadcv', component: UploadcvComponent},
   {path:'newjob', component: NewjobComponent},
-  {path:'job/:id', component: JobdetailComponent},
+  {path:'job/:id', component: JobslistComponent,
+      // children:
+      // [
+      //   {path:'description', component: JobdetailComponent}
+      // ]
+        },
+   {path:'job/:id/description', component: JobdetailComponent},
   {path:'', redirectTo:'joblist',  pathMatch:'full'},
   {path:'**', component:PageNotFoundComponent}
   

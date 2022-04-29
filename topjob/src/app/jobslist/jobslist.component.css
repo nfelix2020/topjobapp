@@ -1,18 +1,23 @@
- .col-card{
-     margin-left: 130px;
+.card{
+    width: 30rem; 
+    min-height:300px;
+    float: left;
+}
+.col-card{
+     margin-left: 25px;
  }
  .container{
     margin-top: 100px;
 }
 
 .ad-time{
-    color: red;
+    color: rgb(184, 52, 52);
+    font-size: 0.8em;
     
 }
 a{
     text-decoration: none;
     color: inherit;
-
 }
 
 .highlight{
@@ -20,3 +25,9 @@ a{
     border: 1px solid blue;
 
   }
+
+  li{
+      list-style-type: circle;
+  }
+
+ 

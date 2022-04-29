@@ -8,14 +8,28 @@ import { Job } from './Job';
 })
 export class JobserviceService {
 
-  private jobsUrl = 'api/jobs/';
+  private jobsUrl = 'api/jobs/'; 
+
+  SERVER_URL: string = "http://localhost:8080/api/" 
 
   constructor(private http: HttpClient) { }
 
   getallJobs():Observable<Job[]>{
     return this.http.get<Job[]>(`${this.jobsUrl}`);
   }
-  getJobById(id: number): Observable<Job>{
-    return this.http.get<Job>(`${this.jobsUrl}/${id}`)
+
+  getJobById(id: number): Observable<any>{
+    return this.http.get(`${this.SERVER_URL + 'jobs'}/${id}`)
   }
+
+
+  // getJobById(id: number): Observable<Job>{
+  //   return this.http.get<Job>(`${this.jobsUrl}/${id}`)
+  // }
+
+  
+  // public getJobDetails(id: number, job: Job) : Observable<Object>{
+  //   return this.http.put<Job>(`${this.jobsUrl}/${id}`, job);
+  // }
+
 }

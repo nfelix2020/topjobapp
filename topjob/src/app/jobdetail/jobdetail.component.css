@@ -1,0 +1,19 @@
+.card-detail{
+    width: 500px; 
+    min-height:590px;
+    position:relative;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    float: right;
+   
+   
+    
+    
+}
+
+.col-card{
+     margin-left: 45px;
+ }
+ .container{
+    margin-top: 50px;
+}

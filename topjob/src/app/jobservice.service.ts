@@ -25,6 +25,9 @@ export class JobserviceService {
 
   getJobById(id: number): Observable<any>{
     return this.http.get(`${this.SERVER_URL + 'jobs'}/${id}`)
+    .pipe(
+         catchError(this.handleError<Job>(`getJobById id=${id}`))
+       );
   }
 
   // getJobById(id: number): Observable<Job>{

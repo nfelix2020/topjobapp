@@ -37,18 +37,5 @@ export class JobdetailComponent implements OnInit {
   goBack(){
     this.location.back()
   }
-
- 
-  
-
-}
-
-
-function ParamMap(params: any, ParamMap: any): string {
-  throw new Error('Function not implemented.');
-}
-
-function params(params: any, ParamMap: (params: any, ParamMap: any) => string): string {
-  throw new Error('Function not implemented.');
 }
 

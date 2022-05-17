@@ -15,7 +15,8 @@ export class JobserviceService {
   constructor(private http: HttpClient) { }
 
   getallJobs():Observable<Job[]>{
-    return this.http.get<Job[]>(`${this.jobsUrl}`);
+    // return this.http.get<Job[]>(`${this.jobsUrl}`);
+    return this.http.get<Job[]>(this.jobsUrl)
   }
 
   getJobById(id: number): Observable<any>{

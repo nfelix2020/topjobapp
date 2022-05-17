@@ -1,19 +1,30 @@
 .card-detail{
-    width: 500px; 
+    width: 70rem; 
+    /* width: 530px; */
     min-height:590px;
     position:relative;
-    overflow-y:scroll;
-    overflow-x:hidden;
+    /* overflow-y:scroll;
+    overflow-x:hidden;   */
     float: right;
-   
-   
-    
-    
 }
+
 
 .col-card{
      margin-left: 45px;
  }
  .container{
     margin-top: 50px;
+}
+
+.btn-primary{
+    min-width: 214px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: rgb(37, 87, 167);
+}
+
+.btn-back{
+    min-width: 214px;
+    text-align: center;
+    font-size: 1.2em;
 }

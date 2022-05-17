@@ -21,11 +21,11 @@ const routes: Routes = [
    {path:'job/:id/description', component: JobdetailComponent},
   {path:'', redirectTo:'joblist',  pathMatch:'full'},
   {path:'**', component:PageNotFoundComponent}
-  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], //--->To make routes available in the whole application
+  imports: [RouterModule.forRoot(routes), RouterModule.forChild(routes)], //--->To make routes available in the whole application
+    
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

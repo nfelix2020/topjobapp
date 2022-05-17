@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Job } from '../Job';
+import {Location} from '@angular/common';
 import { JobserviceService } from '../jobservice.service';
 
 @Component({
@@ -10,49 +11,44 @@ import { JobserviceService } from '../jobservice.service';
 })
 export class JobdetailComponent implements OnInit {
 
-  job: Job= new Job();
-  jobId: number;
+   job: Job= new Job();
+   jobId: number;
+
 
   constructor(
-    private jobService: JobserviceService, 
+    private jobService: JobserviceService,
+    private location: Location,
     private route: ActivatedRoute, 
     private router:Router) { }
+
 
   ngOnInit(): void {
 
  //Recuperer l'Id de chaque job
  this.jobId= parseInt(this.route.snapshot.params['id']); 
+ 
  //Acces aux methodes du service qui a été injecté
  this.jobService.getJobById(this.jobId).subscribe( data => {
    console.log(data);
    this.job=data;
  })
+  }
 
+  goBack(){
+    this.location.back()
   }
 
  
   
 
-//-----------------------------------------------
-
-// onSave(form: NgForm){
-//   console.log(form.value);
-//   this.updateBankAccount();
-
-// }
-
-
-// updateBankAccount(){
-//   this.jobService.getJobDetails(this.jobId, this.job).subscribe(data=>{
-//     console.log("the bank account is edited", data);
-//     this.goToBankAccountList();
-//   })
-// }
-
-// goToBankAccountList(){
-//   this.router.navigateByUrl('/bank-account-list')
-// }
-
 }
 
+
+function ParamMap(params: any, ParamMap: any): string {
+  throw new Error('Function not implemented.');
+}
+
+function params(params: any, ParamMap: (params: any, ParamMap: any) => string): string {
+  throw new Error('Function not implemented.');
+}
 

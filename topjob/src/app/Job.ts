@@ -6,5 +6,15 @@ export class Job {
     address:string;
     city: string;
     salary: string;
-    description: string;
+    contract: string;
+    introduction:{
+        firstIntro:string;
+        secondIntro:string
+    } 
+    fullDescription: {
+        firstSubtitle: string;
+        firstDescription: string;
+        secondSubtitle: string;
+        secondDescription: string
+    }
 }

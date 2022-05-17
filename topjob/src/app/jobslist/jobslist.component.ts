@@ -24,9 +24,9 @@ export class JobslistComponent implements OnInit {
 
   ngOnInit(): void {
 
-     //Recuperer l'Id de chaque job
-    //  this.jobId= parseInt(this.route.snapshot.params['id']); 
-    
+    //  Recuperer l'Id de chaque job
+     this.jobId= parseInt(this.route.snapshot.params['id']); 
+    // this.cardClick();
     this.getAllJobs();
   }
 
@@ -57,6 +57,7 @@ export class JobslistComponent implements OnInit {
 
   cardClick(){
     // this.router.navigateByUrl('/newjob');
+    
   }
 
   // showJobDetails(){
@@ -68,7 +69,7 @@ export class JobslistComponent implements OnInit {
   
   onSelectJob(job: Job): void{
 
-    this.selectedJob=job;
+    // this.selectedJob=job;
     // this.router.navigateByUrl("/job/" + job.id +"/description");
     
   }
